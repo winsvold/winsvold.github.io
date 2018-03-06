@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
+import './less/modern.css'
 import ReactSVG from 'react-svg';
 import Wheel from './img/wheel.svg'
 import Showcase from "./modules/Showcase";
@@ -8,7 +9,7 @@ import hackerTyperPic from "./img/matrixscreen.png";
 import ReactGA from "react-ga";
 
 class App extends Component {
-    constructor(props){
+    constructor(props) {
         ReactGA.initialize('UA-114223488-1');
         ReactGA.pageview('Github Homepage');
         super(props);
@@ -25,7 +26,7 @@ class App extends Component {
                 <Showcase
                     title={'CircleGame'}
                     backgroundImg={{backgroundImage: `url(${circleGameJpg})`}}
-                    url={"https://winsvold.github.io/circlegame/"}
+                    url={"https://winsvold.github.io/circlegame/index.html"}
                     onClick={() => {
                         ReactGA.event({
                             category: 'Link',
@@ -36,7 +37,7 @@ class App extends Component {
                 <Showcase
                     title={'HackerTyper'}
                     backgroundImg={{backgroundImage: `url(${hackerTyperPic})`}}
-                    url={"https://winsvold.github.io/hackertyper/"}
+                    url={"https://winsvold.github.io/hackertyper/index.html"}
                     onClick={() => {
                         ReactGA.event({
                             category: 'Link',
@@ -58,9 +59,20 @@ class App extends Component {
                 </div>
             </div>;
 
+        const bubbles = (
+            <div className="bubble-wrapper">
+                <div className="bubble"/>
+                <div className="bubble"/>
+                <div className="bubble"/>
+                <div className="bubble"/>
+                <div className="bubble"/>
+                <div className="bubble"/>
+            </div>
+        );
         return (
-            <div className="app-wrapper">
+            <div className="bubble-concept">
                 <div className="App">
+                    {bubbles}
                     {header}
                     {mainContent}
                     {footer}

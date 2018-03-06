@@ -5,10 +5,10 @@ function Showcase(props) {
 
     return (
         <a href={props.url} onClick={() => props.onClick()} className="showcase">
-            <h4>{props.title}</h4>
             <div className="showcase-content" style={props.backgroundImg}>
                 <p>{props.text}</p>
             </div>
+            <h4>{props.title}</h4>
         </a>
     );
 }
