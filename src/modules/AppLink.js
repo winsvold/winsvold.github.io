@@ -1,11 +1,11 @@
 import React from 'react';
 import PT from 'prop-types';
 
-function Showcase(props) {
+function AppLink(props) {
 
     return (
-        <a href={props.url} onClick={() => props.onClick()} className="showcase">
-            <div className="showcase-content" style={props.backgroundImg}>
+        <a href={props.url} onClick={() => props.onClick()} className="app-link">
+            <div className="app-link-content" style={props.backgroundImg}>
                 <p>{props.text}</p>
             </div>
             <h4>{props.title}</h4>
@@ -13,13 +13,13 @@ function Showcase(props) {
     );
 }
 
-Showcase.defaultProps = {
+AppLink.defaultProps = {
     text: '',
     backgroundImg: {},
     onClick: () => {}
 };
 
-Showcase.propTypes = {
+AppLink.propTypes = {
     title: PT.string.isRequired,
     text: PT.string,
     backgroundImg: PT.object,
@@ -27,4 +27,4 @@ Showcase.propTypes = {
     onClick: PT.func
 };
 
-export default Showcase;
+export default AppLink;

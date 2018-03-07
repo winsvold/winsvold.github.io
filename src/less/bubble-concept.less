@@ -1,0 +1,111 @@
+@import './variables';
+
+.bubble-concept {
+  .Outline {
+    border: solid 5px white;
+    @media (min-width: @mediaVeryWideThreshold) {
+      border: solid 0px white;
+    }
+  }
+  font-family: 'Amatic SC', cursive;
+  .App-header {
+    position: absolute;
+    height: 35vw;
+    width: 35vw;
+    top: 90vh;
+    left: -4vw;
+    background-color: #5f2ae2;
+    border-radius: 50% 50% 0;
+    z-index: 10;
+    .Outline;
+    transform: rotate(-63deg) translate(50%, -25%);
+    transition: 1s;
+    &:hover {
+      transform: rotate(-50deg)  translate(40%, -35%);
+    }
+    .App-title {
+      position: absolute;
+      bottom: 7vw;
+      right: -1vw;
+      transform: rotate(49deg);
+      font-size: 6.5vw;
+      font-weight: bold;
+      color: white;
+    }
+  }
+  .main-content {
+    background-color: darken(@secondary, 20%);
+    height: 90vh;
+  }
+  .applinks-container {
+    margin-top: 1em;
+    right: 3em;
+    max-width: 90%;
+    position: absolute;
+  }
+  .app-link {
+    float: right;
+    @media (max-width: @mediaWidthThreshold) {
+      clear: both;
+    }
+    margin: 2vw;
+    .LinkSize(25vw, 350px, 150px);
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    background-color: lighten(@secondary, 10%);
+    .Outline;
+    transition: 0.5s;
+    border-radius: 20%;
+    overflow: hidden;
+    transform: rotate(15deg);
+    z-index: 20;
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0 2px 5px #666;
+      cursor: pointer;
+      z-index: 100;
+    }
+    &:active {
+      opacity: 0.8;
+      transform: scale(1);
+      transition: 0s;
+    }
+    .app-link-content {
+      background-size: cover;
+      background-position: center;
+    }
+    h4 {
+      text-align: center;
+      color: white;
+      margin: auto;
+      padding: 0.5em;
+      font-size: 1.5em;
+      transform: rotate(-10deg);
+    }
+  }
+  .rotate-wrapper {
+    display: none;
+  }
+
+  footer {
+    text-align: center;
+    border-bottom: solid 15vw darken(@secondary, 20%);
+    h4 {
+      font-size: 3vw;
+      @media (max-width: @mediaWidthThreshold) {
+        font-size: 1.5em;
+      }
+      padding: 7vw 0 1em 0;
+      margin: 0;
+    }
+  }
+  .LinkSize(@size:30vw, @max-size: 350px, @min-size: 200px){
+    width: @size;
+    min-width: @min-size;
+    max-width: @max-size;
+    height: @size;
+    min-height: @min-size;
+    max-height: @max-size;
+  }
+}

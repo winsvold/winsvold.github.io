@@ -1,0 +1,60 @@
+@import "../../less/variables";
+
+.bubble-wrapper {
+  position: absolute;
+  height: inherit;
+  .bubble {
+    position: absolute;
+    border: solid 5px white;
+    @media (min-width: @mediaVeryWideThreshold) {
+      border: solid 0px white;
+    }
+    border-radius: 100%;
+    transition: 1s;
+    &:hover {
+      transform: rotate(360deg) translate(-10px, -10px);
+    }
+  }
+  .bubble:nth-child(1) {
+    background-color: darken(@secondary, 15%);
+    height: 40vw;
+    width: 40vw;
+    bottom: -3vw;
+    left: 28vw;
+  }
+  .bubble:nth-child(2) {
+    background-color: darken(@secondary, 5%);
+    height: 20vw;
+    width: 20vw;
+    bottom: -10vw;
+    left: 20vw;
+  }
+  .bubble:nth-child(3) {
+    background-color: lighten(@secondary, 5%);
+    height: 25vw;
+    width: 25vw;
+    bottom: -9vw;
+    left: 56vw;
+  }
+  .bubble:nth-child(4) {
+    background-color: darken(@secondary, 15%);
+    height: 45vh;
+    width: 45vh;
+    left: -20vh;
+    bottom: 65vh;
+  }
+  .bubble:nth-child(5) {
+    background-color: darken(@secondary, 15%);
+    height: 20vh;
+    width: 20vh;
+    left: -10vh;
+    bottom: 15vh;
+  }
+  .bubble:nth-child(6) {
+    background-color: lighten(@secondary, 5%);
+    height: 30vh;
+    width: 30vh;
+    left: -25vh;
+    bottom: 35vh;
+  }
+}

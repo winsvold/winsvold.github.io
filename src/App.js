@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import './App.css';
-import './less/modern.css'
-import ReactSVG from 'react-svg';
-import Wheel from './img/wheel.svg'
-import Showcase from "./modules/Showcase";
-import circleGameJpg from "./img/circlegame.jpg";
-import hackerTyperPic from "./img/matrixscreen.png";
+import './less/bubble-concept.css'
+import './less/spinning-wheel-design.css'
 import ReactGA from "react-ga";
+import RotatingWheel from "./modules/styling-components/RotatingWheels";
+import Bubbles from "./modules/styling-components/Bubbles";
+import AppLinks from "./modules/AppLinks";
+import {DesignConcepts} from "./design-concepts";
+
+const styleConcept = Math.random() < 0.5 ? DesignConcepts.BUBBLES : DesignConcepts.SPINNINGWHEEL;
 
 class App extends Component {
     constructor(props) {
@@ -23,28 +25,8 @@ class App extends Component {
 
         const mainContent =
             <section className="main-content">
-                <Showcase
-                    title={'CircleGame'}
-                    backgroundImg={{backgroundImage: `url(${circleGameJpg})`}}
-                    url={"https://winsvold.github.io/circlegame/index.html"}
-                    onClick={() => {
-                        ReactGA.event({
-                            category: 'Link',
-                            action: 'Go to CircleGame'
-                        });
-                    }}
-                />
-                <Showcase
-                    title={'HackerTyper'}
-                    backgroundImg={{backgroundImage: `url(${hackerTyperPic})`}}
-                    url={"https://winsvold.github.io/hackertyper/index.html"}
-                    onClick={() => {
-                        ReactGA.event({
-                            category: 'Link',
-                            action: 'Go to HackerTyper'
-                        });
-                    }}
-                />
+                {styleConcept === DesignConcepts.BUBBLES ? <Bubbles/> : ''}
+                <AppLinks />
             </section>;
 
         const footer =
@@ -52,32 +34,13 @@ class App extends Component {
                 <h4>winsvold@github</h4>
             </footer>;
 
-        const rotatingWheel =
-            <div className="rotate-wrapper">
-                <div className="rotate">
-                    <ReactSVG path={Wheel}/>
-                </div>
-            </div>;
-
-        const bubbles = (
-            <div className="bubble-wrapper">
-                <div className="bubble"/>
-                <div className="bubble"/>
-                <div className="bubble"/>
-                <div className="bubble"/>
-                <div className="bubble"/>
-                <div className="bubble"/>
-            </div>
-        );
+        const cls = `App ${styleConcept}`;
         return (
-            <div className="bubble-concept">
-                <div className="App">
-                    {bubbles}
-                    {header}
-                    {mainContent}
-                    {footer}
-                </div>
-                {rotatingWheel}
+            <div className={cls}>
+                {header}
+                {mainContent}
+                {footer}
+                {styleConcept === DesignConcepts.SPINNINGWHEEL ? <RotatingWheel /> : ''}
             </div>
         );
     }

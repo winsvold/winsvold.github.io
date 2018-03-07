@@ -1,0 +1,30 @@
+@import "../../less/variables";
+
+.rotate-wrapper {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  background-color: black;
+  z-index: -1;
+  svg {
+    opacity: 0.5;
+    stroke: black;
+    fill: white;
+    stroke-width: 0px;
+  }
+  .rotate {
+    @keyframes wheel-spin {
+      from {
+        transform: rotate(190deg);
+      }
+      to {
+        transform: rotate(550deg);
+      }
+    }
+    margin-left: -1000%;
+    width: 2000%;
+    animation: wheel-spin infinite 4000s linear;
+  }
+}
