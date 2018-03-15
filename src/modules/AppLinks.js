@@ -1,7 +1,8 @@
 import React from 'react';
 import AppLink from "./AppLink";
-import circleGameJpg from "../img/circlegame.jpg";
+import circleGameJpg from "../img/circlegame.png";
 import hackerTyperPic from "../img/matrixscreen.png";
+import inflammatoryPic from "../img/iflammatoryessays.png";
 import ReactGA from "react-ga";
 
 function AppLinks() {
@@ -10,7 +11,7 @@ function AppLinks() {
             <AppLink
                 title={'CircleGame'}
                 backgroundImg={{backgroundImage: `url(${circleGameJpg})`}}
-                url={"https://winsvold.github.io/circlegame/index.html"}
+                url={"https://winsvold.github.io/circlegame/"}
                 onClick={() => {
                     ReactGA.event({
                         category: 'Link',
@@ -21,11 +22,22 @@ function AppLinks() {
             <AppLink
                 title={'HackerTyper'}
                 backgroundImg={{backgroundImage: `url(${hackerTyperPic})`}}
-                url={"https://winsvold.github.io/hackertyper/index.html"}
+                url={"https://winsvold.github.io/hackertyper/"}
                 onClick={() => {
                     ReactGA.event({
                         category: 'Link',
                         action: 'Go to HackerTyper'
+                    });
+                }}
+            />
+            <AppLink
+                title={'Inflammatory Essays'}
+                backgroundImg={{backgroundImage: `url(${inflammatoryPic})`}}
+                url={"https://winsvold.github.io/inflammatory-essays"}
+                onClick={() => {
+                    ReactGA.event({
+                        category: 'Link',
+                        action: 'Go to Inflammatory Essays'
                     });
                 }}
             />

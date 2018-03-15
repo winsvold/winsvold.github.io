@@ -2,10 +2,10 @@
 
 .spinning-wheel-design {
   .BorderBottom() {
-    border-bottom: solid 0.5em @secondary;
+    border-bottom: solid 1em fade(black, 40%);
   }
   .BorderTop() {
-    border-top: solid 0.5em lighten(@secondary, 20%);
+    border-top: solid 1em fade(black, 40%);
   }
   .Container() {
     width: 80vw;
@@ -57,7 +57,7 @@
     background-color: rgba(100,100,100,0.8);
     padding: 1em;
     @media(max-width: @mediaWidthThreshold) {
-      padding: 0;
+      padding: 0.5em 0;
     }
   }
 
@@ -74,7 +74,7 @@
   }
 
   .app-link {
-    background-color: lighten(@primary,10%);
+    background-color: fade(black, 40%);
     transition: 0.5s;
     display: grid;
     vertical-align: middle;
@@ -86,14 +86,14 @@
     @media(min-width: @mediaWidthThreshold) {
       &:hover {
         transform: scale(1.05);
-        box-shadow: 0 2px 5px #666;
+        box-shadow: 0 0.1em 1em fade(black, 70%);
         cursor: pointer;
         z-index: 100;
       }
     }
     @media(max-width: @mediaWidthThreshold) {
       &:hover {
-        margin-top: 0.2em;
+        margin-top: 0.1em;
         font-size: 1.3em;
       }
     }
@@ -124,6 +124,8 @@
       padding: 0.5em;
       @media(max-width: @mediaWidthThreshold) {
         font-size: 2em;
+        margin-left: 0;
+        white-space: nowrap;
       }
     }
   }
