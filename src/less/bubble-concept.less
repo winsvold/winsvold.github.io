@@ -3,9 +3,6 @@
 .bubble-concept {
   .Outline {
     border: solid 5px white;
-    @media (min-width: @mediaVeryWideThreshold) {
-      border: solid 0px white;
-    }
   }
   font-family: 'Amatic SC', cursive;
   .App-header {
@@ -51,12 +48,10 @@
     margin: 2vw;
     .LinkSize(25vw, 350px, 150px);
     position: relative;
-    display: grid;
-    grid-template-rows: 1fr auto;
     background-color: lighten(@secondary, 10%);
     .Outline;
     transition: 0.5s;
-    border-radius: 20%;
+    border-radius: 50%;
     overflow: hidden;
     transform: rotate(15deg);
     z-index: 20;
@@ -72,16 +67,30 @@
       transition: 0s;
     }
     .app-link-content {
+      display: flex;
+      height: 100%;
       background-size: cover;
       background-position: center;
+      &:after {
+        content: '';
+        height: 100%;
+        width: 100%;
+        background-color: fade(black,30%);
+      }
     }
     h4 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      transform: translate(-50%, -50%);
       text-align: center;
       color: white;
       margin: auto;
-      padding: 0.5em;
-      font-size: 1.5em;
-      transform: rotate(-10deg);
+      padding: 0 0.5em;
+      font-size: 4vw;
+      text-shadow: 0 0 1em fade(black, 50%);
+      box-sizing: border-box;
     }
   }
   .rotate-wrapper {
