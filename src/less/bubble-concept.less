@@ -41,25 +41,28 @@
     position: absolute;
   }
   .app-link {
+    position: relative;
     float: right;
     @media (max-width: @mediaWidthThreshold) {
       clear: both;
     }
     margin: 2vw;
     .LinkSize(25vw, 350px, 150px);
-    position: relative;
     background-color: lighten(@secondary, 10%);
     .Outline;
     transition: 0.5s;
     border-radius: 50%;
     overflow: hidden;
-    transform: rotate(15deg);
+    transform: rotate(-15deg);
     z-index: 20;
     &:hover {
       transform: scale(1.1);
       box-shadow: 0 2px 5px #666;
       cursor: pointer;
       z-index: 100;
+      h4 {
+        transform: translate(-50%, -50%) rotate(0);
+      }
     }
     &:active {
       opacity: 0.8;
@@ -80,15 +83,15 @@
     }
     h4 {
       position: absolute;
+      transition: 0.5s;
       top: 50%;
       left: 50%;
       width: 100%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%) rotate(30deg);
       text-align: center;
       color: white;
       margin: auto;
-      padding: 0 0.5em;
-      font-size: 4vw;
+      font-size: calc(~"3vw + 16px");
       text-shadow: 0 0 1em fade(black, 50%);
       box-sizing: border-box;
     }

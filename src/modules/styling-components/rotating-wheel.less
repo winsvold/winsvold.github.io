@@ -17,14 +17,15 @@
   .rotate {
     @keyframes wheel-spin {
       from {
-        transform: rotate(190deg);
+        transform: rotate(0deg);
       }
       to {
-        transform: rotate(550deg);
+        transform: rotate(360deg);
       }
     }
-    margin-left: -1000%;
-    width: 2000%;
+    margin-left: -1000vh;
+    width: 2000vh;
     animation: wheel-spin infinite 4000s linear;
+    animation-delay: -3080s;
   }
 }
