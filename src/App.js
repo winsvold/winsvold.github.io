@@ -1,14 +1,19 @@
 import React, {Component} from 'react';
 import './App.css';
-import './less/bubble-concept.css'
-import './less/spinning-wheel-design.css'
+import './less/bubble-concept.css';
+import './less/spinning-wheel-design.css';
+import './less/modern.css';
 import ReactGA from "react-ga";
 import RotatingWheel from "./modules/styling-components/RotatingWheels";
 import Bubbles from "./modules/styling-components/Bubbles";
 import AppLinks from "./modules/AppLinks";
 import {DesignConcepts} from "./design-concepts";
 
-const styleConcept = Math.random() < 0.5 ? DesignConcepts.BUBBLES : DesignConcepts.SPINNINGWHEEL;
+const styleConcept = Math.random() < 0.3
+  ? DesignConcepts.BUBBLES
+  : Math.random() < 0.3
+    ? DesignConcepts.MODERN
+    : DesignConcepts.SPINNINGWHEEL;
 
 class App extends Component {
     constructor(props) {

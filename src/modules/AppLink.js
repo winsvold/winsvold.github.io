@@ -5,10 +5,9 @@ function AppLink(props) {
 
     return (
         <a href={props.url} onClick={() => props.onClick()} className="app-link">
-            <div className="app-link-content" style={props.backgroundImg}>
-                <p>{props.text}</p>
-            </div>
-            <h4>{props.title}</h4>
+            <div className="app-link-img" style={props.backgroundImg} />
+            <div className="app-link-tekst"><p>{props.text}</p></div>
+            <div className="app-link-title"><h4>{props.title}</h4></div>
         </a>
     );
 }

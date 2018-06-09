@@ -1,0 +1,119 @@
+@clipSize: 50px;
+@color1: #114B5F;
+@color2: #028090;
+@color3: #E4FDE1;
+
+.ClipUpperRightCorner {
+  clip-path: polygon(0 0, 0% 100%, 100% 100%, calc(~"100%" - @clipSize) 0);
+  padding-right: @clipSize;
+}
+
+.ClipLowerLeftAndUpperRightCorner {
+  clip-path: polygon(0 0, @clipSize 100%, 100% 100%, calc(~"100%" - @clipSize) 0);
+  padding-right: @clipSize;
+  padding-left: @clipSize;
+}
+
+body {
+  background-color: black;
+}
+
+.modern {
+  color: white;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  h1, h2, h3, h4 {
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  header, footer {
+    background-color: @color2;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  header {
+    border-bottom: 1em @color1 solid;
+  }
+
+  footer {
+    border-top: 1em @color1 solid;
+  }
+
+  .main-content {
+    background-color: fade(darken(@color2,20%), 50%);
+    display: flex;
+    justify-content: center;
+  }
+
+  .applinks-container {
+    background-color: fade(@color3, 40%);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 5vmin;
+    padding: 5vmin 0;
+    max-width: 720px;
+  }
+
+  .app-link {
+    display: grid;
+    grid-template-areas: "text title image";
+    grid-template-columns: 35% 15% 40%;
+    min-height: 13em;
+    background: linear-gradient(0.2turn, @color1 20%, transparent);
+    > * {
+      transition: 1s;
+    }
+    &:hover, &:focus {
+      > * {
+        transform: translateX(5vmin);
+      }
+    }
+
+    .app-link-tekst {
+      grid-area: text;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: @color1;
+      padding: 1em;
+      color: #EEE;
+      .ClipUpperRightCorner;
+    }
+
+    .app-link-img {
+      grid-area: image;
+      background-size: cover;
+      background-position: center;
+      margin-left: -@clipSize;
+      .ClipLowerLeftAndUpperRightCorner;
+    }
+
+    .app-link-title {
+      grid-area: title;
+      overflow: hidden;
+      background-color: @color2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: -@clipSize;
+      .ClipLowerLeftAndUpperRightCorner;
+      h4 {
+        white-space: nowrap;
+        font-size: 1.2em;
+        color: white;
+        transform: rotate(70deg);
+      }
+    }
+  }
+
+}
+
