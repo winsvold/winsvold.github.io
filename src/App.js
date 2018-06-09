@@ -8,47 +8,66 @@ import RotatingWheel from "./modules/styling-components/RotatingWheels";
 import Bubbles from "./modules/styling-components/Bubbles";
 import AppLinks from "./modules/AppLinks";
 import {DesignConcepts} from "./design-concepts";
+import Cookies from 'js-cookie';
 
-const styleConcept = Math.random() < 0.3
-  ? DesignConcepts.BUBBLES
-  : Math.random() < 0.3
-    ? DesignConcepts.MODERN
-    : DesignConcepts.SPINNINGWHEEL;
+function getStyleConcept() {
+  const prevStyle = Cookies.get('style-concept');
+  switch (prevStyle) {
+    case DesignConcepts.BUBBLES:
+      return DesignConcepts.MODERN;
+    case DesignConcepts.MODERN:
+      return DesignConcepts.SPINNINGWHEEL;
+    case DesignConcepts.SPINNINGWHEEL:
+      return DesignConcepts.BUBBLES;
+    default:
+      return Math.random() < 0.3
+        ? DesignConcepts.BUBBLES
+        : Math.random() < 0.3
+          ? DesignConcepts.MODERN
+          : DesignConcepts.SPINNINGWHEEL;
+  }
+}
 
 class App extends Component {
-    constructor(props) {
-        ReactGA.initialize('UA-114223488-1');
-        ReactGA.pageview('Github Homepage');
-        super(props);
-    }
+  constructor(props) {
+    ReactGA.initialize('UA-114223488-1');
+    ReactGA.pageview('Github Homepage');
+    super(props);
 
-    render() {
-        const header =
-            <header className="App-header">
-                <h1 className="App-title">Daniel Winsvold</h1>
-            </header>;
+    const styleConcept = getStyleConcept();
+    Cookies.set('style-concept', styleConcept);
+    this.state = {
+      styleConcept: styleConcept
+    };
+  }
 
-        const mainContent =
-            <section className="main-content">
-                {styleConcept === DesignConcepts.BUBBLES ? <Bubbles/> : ''}
-                <AppLinks />
-            </section>;
+  render() {
+    const header =
+      <header className="App-header">
+        <h1 className="App-title">Daniel Winsvold</h1>
+      </header>;
 
-        const footer =
-            <footer className="footer">
-                <h4>winsvold@github</h4>
-            </footer>;
+    const mainContent =
+      <section className="main-content">
+        {this.state.styleConcept === DesignConcepts.BUBBLES ? <Bubbles/> : ''}
+        <AppLinks/>
+      </section>;
 
-        const cls = `App ${styleConcept}`;
-        return (
-            <div className={cls}>
-                {header}
-                {mainContent}
-                {footer}
-                {styleConcept === DesignConcepts.SPINNINGWHEEL ? <RotatingWheel /> : ''}
-            </div>
-        );
-    }
+    const footer =
+      <footer className="footer">
+        <h4>winsvold@github</h4>
+      </footer>;
+
+    const cls = `App ${this.state.styleConcept}`;
+    return (
+      <div className={cls}>
+        {header}
+        {mainContent}
+        {footer}
+        {this.state.styleConcept === DesignConcepts.SPINNINGWHEEL ? <RotatingWheel/> : ''}
+      </div>
+    );
+  }
 }
 
 export default App;
