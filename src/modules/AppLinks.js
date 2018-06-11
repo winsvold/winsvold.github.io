@@ -33,7 +33,7 @@ function AppLinks() {
         }}
       />
       <AppLink
-        text="A homage to Jenny Holzer and her ’15 Inflammatory Essays’. Originally presented anonymously on the streets of New York City"
+        text="A homage to Jenny Holzer and her ’15 Inflammatory Essays’."
         title={'Inflammatory Essays'}
         backgroundImg={{backgroundImage: `url(${inflammatoryPic})`}}
         url={"https://winsvold.github.io/inflammatory-essays"}
