@@ -14,17 +14,13 @@ function getStyleConcept() {
   const prevStyle = Cookies.get('style-concept');
   switch (prevStyle) {
     case DesignConcepts.BUBBLES:
-      return DesignConcepts.MODERN;
-    case DesignConcepts.MODERN:
       return DesignConcepts.SPINNINGWHEEL;
     case DesignConcepts.SPINNINGWHEEL:
       return DesignConcepts.BUBBLES;
     default:
-      return Math.random() < 0.3
+      return Math.random() < 0.5
         ? DesignConcepts.BUBBLES
-        : Math.random() < 0.3
-          ? DesignConcepts.MODERN
-          : DesignConcepts.SPINNINGWHEEL;
+        : DesignConcepts.SPINNINGWHEEL;
   }
 }
 
