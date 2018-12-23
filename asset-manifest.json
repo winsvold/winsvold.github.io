@@ -1,10 +1,10 @@
 {
   "main.css": "static/css/main.bbe313a4.css",
   "main.css.map": "static/css/main.bbe313a4.css.map",
-  "main.js": "static/js/main.b9b25a99.js",
-  "main.js.map": "static/js/main.b9b25a99.js.map",
-  "static/media/circlegame.png": "static/media/circlegame.7255c4fc.png",
-  "static/media/iflammatoryessays.png": "static/media/iflammatoryessays.bedd20f0.png",
-  "static/media/matrixscreen.png": "static/media/matrixscreen.6ff5ca1c.png",
-  "static/media/wheel.svg": "static/media/wheel.20a1152a.svg"
+  "main.js": "static/js/main.088cadd9.js",
+  "main.js.map": "static/js/main.088cadd9.js.map",
+  "static\\media\\circlegame.png": "static/media/circlegame.7255c4fc.png",
+  "static\\media\\iflammatoryessays.png": "static/media/iflammatoryessays.bedd20f0.png",
+  "static\\media\\matrixscreen.png": "static/media/matrixscreen.6ff5ca1c.png",
+  "static\\media\\wheel.svg": "static/media/wheel.4ee88fd5.svg"
 }
