@@ -3,7 +3,6 @@ import AppLink from "./AppLink";
 import circleGameJpg from "../img/circlegame.png";
 import hackerTyperPic from "../img/matrixscreen.png";
 import inflammatoryPic from "../img/iflammatoryessays.png";
-import ReactGA from "react-ga";
 
 function AppLinks() {
   return (
@@ -13,36 +12,18 @@ function AppLinks() {
         title={'CircleGame'}
         backgroundImg={{backgroundImage: `url(${circleGameJpg})`}}
         url={"https://winsvold.github.io/circlegame/"}
-        onClick={() => {
-          ReactGA.event({
-            category: 'Link',
-            action: 'Go to CircleGame'
-          });
-        }}
       />
       <AppLink
         text="Bring out your inner hacker and show everyone what a fearsome cyber-terrorist you are."
         title={'HackerTyper'}
         backgroundImg={{backgroundImage: `url(${hackerTyperPic})`}}
         url={"https://winsvold.github.io/hackertyper/"}
-        onClick={() => {
-          ReactGA.event({
-            category: 'Link',
-            action: 'Go to HackerTyper'
-          });
-        }}
       />
       <AppLink
         text="A homage to Jenny Holzer and her ’15 Inflammatory Essays’."
         title={'Inflammatory Essays'}
         backgroundImg={{backgroundImage: `url(${inflammatoryPic})`}}
         url={"https://winsvold.github.io/inflammatory-essays"}
-        onClick={() => {
-          ReactGA.event({
-            category: 'Link',
-            action: 'Go to Inflammatory Essays'
-          });
-        }}
       />
     </div>
   );

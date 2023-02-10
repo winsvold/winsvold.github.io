@@ -3,7 +3,6 @@ import './App.css';
 import './less/bubble-concept.css';
 import './less/spinning-wheel-design.css';
 import './less/modern.css';
-import ReactGA from "react-ga";
 import RotatingWheel from "./modules/styling-components/RotatingWheels";
 import Bubbles from "./modules/styling-components/Bubbles";
 import AppLinks from "./modules/AppLinks";
@@ -26,8 +25,6 @@ function getStyleConcept() {
 
 class App extends Component {
   constructor(props) {
-    ReactGA.initialize('UA-114223488-1');
-    ReactGA.pageview('Github Homepage');
     super(props);
 
     const styleConcept = getStyleConcept();
